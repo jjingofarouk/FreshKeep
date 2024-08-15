@@ -1,0 +1,1312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,  maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-client_id" content="1060174241968-nn82fv8k7rc2m9gko7ul4317dsf9t9m7.apps.googleusercontent.com">
+    <title>Galt Food Mart</title>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />-->
+    <link rel="stylesheet" href="https://cafejavas.co.ug/root-assets/css/css/slick.min.css">
+<link rel="stylesheet" href="https://cafejavas.co.ug/root-assets/css/css/slick-theme.min.css">
+<link rel="stylesheet" href="https://cafejavas.co.ug/root-assets/css/css/style.css">
+<link rel="stylesheet" href="https://cafejavas.co.ug/root-assets/css/css/datepicker.css">
+<!--<link rel="stylesheet" type="text/css" href="https://cafejavas.co.ug/css/google.css">-->
+
+    <script type="text/javascript">
+        function subscribe(e, action) {
+            e.preventDefault();
+            var subEmail = $('#subEmail').val();
+            $.ajax({
+                url: "https://cafejavas.co.ug/user/subscribe",
+                type: "post",
+                contentType: 'application/x-www-form-urlencoded',
+                data: {
+                    "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q",
+                    'email': subEmail,
+                    'action': action
+                },
+                success: function(result) {
+                    var msg = "";
+                    if (result == 0) {
+                        msg = "Email Subscribed Successfully";
+                    } else if (result == 1) {
+                        msg = "Email Already Subscribed";
+                    } else if (result == 2) {
+                        msg = "Email Subscription Updated";
+                    } else if (result == 3) {
+                        msg = "Email not exist to unsubscribe";
+                    } else if (result == 4) {
+                        msg = "Email Unsubscribed Successfully";
+                    } else if (result == 5) {
+                        msg = "Email Already Unsubscribed";
+                    }
+                    $('#subMsg').text(msg);
+                    $('#subscribe_pop').css('display', 'block');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                    location.reload();
+                }
+            });
+
+        }
+
+        function setEmail() {
+            $('#unsubEmail').val($('#subEmail').val());
+        }
+    </script>
+</head>
+
+<body>
+
+    <section class="home-full-sec">
+        <div class="fullbanner">
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/Banner_02.png" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-3.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-4.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-5.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-6.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-7.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-8.jpg" alt="Product Image" />
+            </div>
+            <div>
+                <img src="https://cafejavas.co.ug/root-assets/images/banner-9.jpg" alt="Product Image" />
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex flex-middle home-banner-content pb-40 flex-wrap">
+                <div class="col xs12 s5 m3 order-s-2">
+                    <div class="home-side-menu">
+                        <div class="side-menu-logo">
+                            <img src="https://cafejavas.co.ug/root-assets/images/logo-white.png" alt="Product Image" />
+                        </div>
+                        <div class="banner-menu">
+                            <ul>
+                                <li>
+                                    <a href="https://cafejavas.co.ug/user/menu">
+                                        <img src="https://cafejavas.co.ug/root-assets/images/menu.png" alt="Product Image" />
+                                        <span>Menu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#footer">
+                                        <img src="https://cafejavas.co.ug/root-assets/images/locations.png" alt="Product Image" />
+                                        <span>LOCATIONS</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://cafejavas.co.ug/user/career">
+                                        <img src="https://cafejavas.co.ug/root-assets/images/blog.png" alt="Product Image" />
+                                        <span>CAREERS</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!--<a href="javascript:void(0);" data-popup-open="feedback_popup">Give Feedback</a>-->
+                                    <a href="https://cafejavas.co.ug/user/feedback" data-popup-open="feedback_popup">
+                                        <img src="https://cafejavas.co.ug/root-assets/images/about-us.png" alt="Product Image" />
+                                        <span>FEEDBACK</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="getAboutUs()">
+                                        <img src="https://cafejavas.co.ug/root-assets/images/menu.png" alt="Product Image" />
+                                        <span>ABOUT US</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col xs12 s7 m9 d-flex flex-middle flex-center order-s-1">
+                    <div class="home-order-btn">
+                        <a href="https://cafejavas.co.ug/user/menu"><button type="button" class="btn btn-xl btn-red">PLACE YOUR ORDER</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-30">
+        <div class="container">
+            <div class="product-list-wrapper product-list-landing d-flex flex-wrap col-grid">
+                <div class="col xs6">
+                    <div class="product-card mb-30 product-tags-info">
+                        <div class="">
+                            <a href="https://cafejavas.co.ug/user/checkgiftcards"><img src="https://cafejavas.co.ug/root-assets/images/gift-card-home.jpg" alt="Product Image" /></a>
+                        </div>
+                        <div class="product-tags">
+                            <div class="product-newbrand">
+                                <img src="https://cafejavas.co.ug/root-assets/images/new-brand-tag.png" alt="New Brand image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col xs6">
+                    <div class="product-card mb-30 product-tags-info">
+                        <div class="">
+                            <a href="https://cafejavas.co.ug/user/checkloyaltypoints"><img src="https://cafejavas.co.ug/root-assets/images/home-page-superfoods-brand-new.jpg" alt="Product Image" /></a>
+                        </div>
+                        <div class="product-tags">
+                            <div class="product-newbrand">
+                                <img src="https://cafejavas.co.ug/root-assets/images/new-brand-tag.png" alt="New Brand image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="strip-full">
+        <div class="container">
+            <div class="col strip-col d-flex flex-column-mb flex-space-between flex-middle">
+                <div>
+                    <div class="social-icon-box mb-10">
+                        <a href="https://www.facebook.com/CafeJavas/" target="_blank"><i class="icon-facebook" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/cafejavas_ug" target="_blank"><i class="icon-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/cafejavas_ug/" target="_blank"><i class="icon-instagram" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="subscribe-email-form">
+                        <div class="text-blue mb-10">Join our email list</div>
+                        <form class="d-flex mb-10" onsubmit="return subscribe(event,'0')" style="float: left;">
+                            <input type="email" id="subEmail" name="subEmail" placeholder="Email address" required="required" onchange="setEmail()">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                        <form class="d-flex mb-10" onsubmit="return subscribe(event,'1')" style="max-width: 100px;">
+                            <input type="hidden" id="unsubEmail" name="subEmail" placeholder="Email address" required="required">
+                            <input type="submit" value="Unsubscribe" style="margin-left: 5px; border-radius: 5px;">
+                        </form>
+                        <div class="text-blue">By clicking "SUBSCRIBE" I agree to receive news, promotions, information, and offers from Galt Food Mart.</div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <figure class="mr-10">
+                        <a href="https://www.tripadvisor.com/Restaurant_Review-g293841-d1605072-Reviews-Cafe_Javas-Mbarara_Central_Region.html" target="blank"> <img src="https://cafejavas.co.ug/root-assets/images/tripadvisor-logo.png"></a>
+                    </figure>
+                    <figure>
+                        <img src="https://cafejavas.co.ug/root-assets/images/service-logo.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="popup" id="subscribe_pop" data-popup="subscribe_pop">
+        <div class="popup-inner">
+            <div class="popup-header">
+                <h3 class="mt-0 fs-20 mb-10" id="subMsg" style="text-align:center; color: #546f43; "></h3>
+            </div>
+            <div class="popup-max-hgt">
+
+            </div>
+            <a class="popup-close" data-popup-close="subscribe_pop" href="#"><i class="icon-cross"></i></a>
+        </div>
+        <div class="overlay overlay-click"></div>
+    </div>
+    <!--This file contains all the common popup's-->
+    <!-- Feedback Popup -->
+<div class="popup" data-popup="feedback_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 fs-20 mb-10">WE APPRECIATE YOUR FEEDBACK</h3>
+        </div>
+        <div class="popup-max-hgt">
+            <p class="fs-18 font-brandon-text">We'd love to hear your feedback; good or bad. If we didn't make you feel special, we'd like to make it up to you. Please let us know what happened during your visit and we'll get in touch with you soon.</p>
+            <p class="mb-20">The information you provide us will be treated in the strictest confidence and may be used for improving our service delivery purposes. A copy of the completed form will be automatically sent to the email address supplied.</p>
+            <form>
+                <div class="alert alert-error mb-15" id="fb_div" style="display:none"></div>
+                <div class="form-row mb-15">
+                    <input type="email" class="form-input" placeholder="YOUR EMAIL HERE" id="feedback_email" required="true" autocomplete="off" />
+                </div>
+                <div class="form-row mb-15">
+                    <textarea rows="7" class="form-input textarea-hgt" placeholder="YOUR FEEDBACK HERE" id="feedback_text" required="true"></textarea>
+                </div>
+                <button type="submit" class="btn btn-green mt-10" onclick="sendFeedback(event)">SEND</button>
+            </form>
+        </div>
+        <a class="popup-close" data-popup-close="feedback_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- User Info Popup -->
+<div class="popup" data-popup="user_info_popup" id="user_info_popup">
+    <div class="popup-inner pt-40">
+        <div class="popup-max-hgt">
+            <div class="d-flex flex-wrap">
+                <div class="col s4">
+                    <div class="user-thumbnail" id='u_img'>
+                        <!--<i class="icon-profile" aria-hidden="true"></i>-->
+                    </div>
+                </div>
+                <div class="col s8 fs-18 f-bold">
+                    <div class="text-green text-uppercase mb-10" id="u_name">Name</div>
+                    <div class="mb-20" id="u_phone">+256700000</div>
+                    <div class="mb-20 text-green" id="u_email">name@myname.com</div>
+                    <div class="mb-20"><a href="#" data-popup-open="change_password_popup" class="text-gray">Change Password</a></div>
+                    <button type="button" class="btn btn-green mt-10" data-popup-open="edit_profile_popup">EDIT PROFILE</button>
+                </div>
+
+            </div>
+        </div>
+        <a class="popup-close" data-popup-close="user_info_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- Change Password Popup -->
+<div class="popup" data-popup="change_password_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 text-gray fs-20 mb-30">CHANGE PASSWORD</h3>
+        </div>
+        <div class="popup-max-hgt">
+            <form>
+                <div class="alert alert-error mb-15" id="pwd_div" style="display:none"></div>
+                <div class="form-row mb-20">
+                    <label>ENTER OLD PASSWORD</label>
+                    <input type="password" id="old_pwd" class="form-input" />
+                </div>
+                <div class="form-row mb-20">
+                    <label>ENTER NEW PASSWORD</label>
+                    <input type="password" id="new_pwd" class="form-input" />
+                </div>
+                <div class="form-row mb-20">
+                    <label>CONFIRM PASSWORD</label>
+                    <input type="password" id="conf_pwd" class="form-input" />
+                </div>
+                <button type="submit" class="btn btn-green mt-10" onclick="changePassword(event)">SUBMIT</button>
+            </form>
+        </div>
+        <a class="popup-close" data-popup-close="change_password_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- Edit Profile Popup -->
+<div class="popup" data-popup="edit_profile_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 text-gray fs-20 mb-30">EDIT PROFILE</h3>
+            <div class="alert alert-success mb-15" id="epf_s_div" style="display:none"></div>
+        </div>
+        <div class="popup-max-hgt">
+            <form id="edit_profile_form">
+                <div class="alert alert-error mb-15" id="epf_div" style="display:none"></div>
+                <div class="form-row mb-20">
+                    <div class="user-profile-box">
+                        <div class="user-profile-pic mb-0">
+                            <img src="images/banner-1.jpg" alt="User profile pic" id="user_image_show" />
+                        </div>
+                        <label class="pic-change-icon">
+                            <input type="file" class="custom-file-input" name="u_image" id="u_image" onchange="readURL(this)">
+                            <i class="icon-camera"></i>
+                        </label>
+                    </div>
+                </div>
+                <!--                <div class="form-row mb-20">
+                                    <input type="file" class="custom-file-input" name="u_image" id="u_image" >
+                                </div>-->
+                <div class="form-row mb-20">
+                    <label>FIRST NAME</label>
+                    <input type="text" id="f_name" class="form-input" required="true" />
+                </div>
+                <div class="form-row mb-20">
+                    <label>LAST NAME</label>
+                    <input type="text" id="l_name" class="form-input" required="true" />
+                </div>
+                <!--<div class="form-row mb-20">-->
+                <!--<label>BIRTHDAY</label>-->
+                <input type="hidden" id="dob" class="form-input" required="true" />
+                <!--</div>-->
+                <div class="form-row mb-20">
+                    <label>EMAIL</label>
+                    <input type="email" id="usr_email" class="form-input" required="true" readonly="true" />
+                </div>
+                <div class="form-row mb-20">
+                    <label>PHONE NUMBER</label>
+                    <input type="text" id="ph_no" class="form-input" required="true" readonly="true" />
+                </div>
+                <button type="submit" class="btn btn-green mt-10" onclick="editProfile(event)">SUBMIT</button>
+            </form>
+        </div>
+        <a class="popup-close" data-popup-close="edit_profile_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- Notification Popup -->
+<div class="popup" data-popup="notify-popup" id="notify_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 mb-10">NOTIFICATION</h3>
+        </div>
+
+        <div class="popup-max-hgt font-brandon-text">
+            <div id="notify_div"></div>
+            <div class="text-left mt-20">
+                <input type="hidden" id="previous" />
+                <input type="hidden" id="next" />
+                <button type="button" id="prevBtn" class="btn btn-green mb-10" onclick="getNotifications($('#previous').val())">Previous</button>
+                <button type="button" id="nextBtn" class="btn btn-green mb-10" onclick="getNotifications($('#next').val())">Next</button>
+                <button type="button" id="clrBtn" class="btn btn-green mb-10" onclick="clearNotifications()">Clear All</button>
+            </div>
+        </div>
+        <a class="popup-close" data-popup-close="notify-popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- About Us Popup -->
+<div class="popup" data-popup="about_us_popup" id="about_us_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 mb-10">ABOUT US</h3>
+        </div>
+        <div class="popup-max-hgt font-brandon-text" id="branch_div">
+        </div>
+        <a class="popup-close" data-popup-close="about_us_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- Terms and Conditions Popup -->
+<div class="popup" data-popup="terms_conditions_popup" id="terms_conditions_popup">
+    <div class="popup-inner">
+        <div class="popup-header">
+            <h3 class="mt-0 mb-10">TERMS & CONDITIONS</h3>
+        </div>
+        <div class="popup-max-hgt font-brandon-text" id="terms_div">
+        </div>
+        <a class="popup-close" data-popup-close="terms_conditions_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+
+<!-- Reward Popup -->
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+.container-max {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.container-max h3,
+h1,
+p {
+  margin:0;
+}
+
+.container-max  p {
+  font-size: 16px;
+}
+.container-max h3 {
+  font-size: 22px;
+  margin-bottom:0;
+}
+.container-max h1 {
+  font-size: 32px;
+}
+.container-max ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.welcome-rewards {
+  width: 100%;
+  border-radius: 20px;
+  background-image: url(https://cafejavas.co.ug/root-assets/images/bg.svg), url(https://cafejavas.co.ug/root-assets/images/medal.svg);
+  background-position: center, right 25px top;
+  background-size: cover, 14%;
+  background-repeat: no-repeat, no-repeat;
+  position: relative;
+  margin-bottom: 10px;
+}
+.welcome-rewards h3{
+    color:#383838 !important;
+}
+
+.welcome-rewards::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://cafejavas.co.ug/root-assets/images/dots.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+.banner-text {
+  padding: 1rem;
+}
+
+/* history */
+.history {
+  background-color: #083050;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  margin-bottom: 10px;
+}
+.title {
+  color: #fff;
+  margin-bottom: 8px;
+}
+.history-count {
+  display: flex;
+  justify-content: flex-start;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.history-content {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 12px;
+}
+
+.history .chewron-img,
+.path-img {
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+progress {
+  accent-color: #63cd6a;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  filter: brightness(1.5);
+}
+::-webkit-progress-value {
+  background-color: #63cd6a;
+}
+
+::-moz-progress-bar {
+  background-color: #63cd6a;
+}
+::-webkit-progress-bar {
+  background-color: #fff;
+}
+
+/* work list */
+.work-list-c li:last-child {
+  border-bottom: 40px solid #f6f6f6;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.how-it-work ul li {
+  border-bottom: 12px solid #f6f6f6;
+}
+.title-text-center {
+  background-color: #f6f6f6;
+  padding: 2rem;
+  font-size: 22px;
+  font-weight: bold;
+  color: #083050;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.work-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 0;
+}
+.work-list img {
+  vertical-align: middle;
+}
+
+.work-list h5 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #083050;
+}
+.work-list p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #868686;
+}
+.work-list .work-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+</style>
+<div class="popup" data-popup="reward_popup" id="reward_popup">
+    <div class="popup-inner" style="height:100%; overflow-y:scroll;">
+        <div class="popup-header"></div>
+        <!-- <div class="popup-max-hgt">
+            <div class="d-flex flex-wrap flex-middle reward-box-wrap mb-10 flex-center">
+                <div class="s3 text-center reward-circle mb-20" id="reward_count">
+                    <input class="reward" id="reward_user" data-width="200" data-height="200" data-min=0 data-angleOffset="-150" data-angleArc="300">
+                    <div class="text-green reward-full" id="reward_total"></div>
+                    xxxxxxxxxx<img class="text-center" src="https://cafejavas.co.ug/root-assets/images/Rewards.svg">
+                </div>
+                <div class="s6 mb-20">
+                    <div class="text-center">
+                        <h2 class="mt-0 mb-5 text-blue reward-text">REWARDS</h2>
+                        <div class="text-blue reward-number f-bold" id="remaining_reward"></div>
+                        <div class="text-green fs-13 f-bold">STARS UNTIL THE NEXT REWARD</div>
+                    </div>
+                </div> 
+            </div>
+            <div class="d-flex flex-wrap pt-20 top-green">
+                <div class="w-100 text-center" id="user_level">
+                </div>
+            </div>
+        </div> -->
+<div class="container-max">
+    <div class="welcome-rewards">
+      <div class="banner-text">
+        <h3>Welcome to</h3>
+        <h1>Rewards</h1>
+        <p>Introducing Rewards! Our way to say</p>
+        <p>"Thank you" for using our app</p>
+      </div>
+    </div>
+
+    <div class="history">
+      <a href="#"><img src="https://cafejavas.co.ug/root-assets/images/chewron.svg" alt="chewron"></a>
+      <div class="history-content">
+        <h3 class="title">Points Earned</h3>
+        <div class="history-count">
+          <span class="count-1" id="count-1"></span> / 
+          <span class="count-2">1000000</span>
+        </div>
+        <progress id="user_level" max="1000000"> 32% </progress>
+      </div>
+     
+    </div>
+
+
+    <div class="how-it-work">
+      <div class="how-it-work-text">
+        <div class="title-text-center">
+          How it works
+        </div>
+        <ul class="work-list-c">
+          <li>
+            <div class="work-list">
+              <span>
+                <img src="https://cafejavas.co.ug/root-assets/images/Component1.png" alt="Component1">
+              </span>
+              <span class="work-text">
+                <h5>Earn Points</h5>
+                <p>You can Earn Points on every order.</p>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="work-list">
+              <span>
+                <img src="https://cafejavas.co.ug/root-assets/images/Component2.png" alt="Component2">
+              </span>
+              <span class="work-text">
+                <h5>Validity of Points</h5>
+                <p>Points credited has an expiry of 1 year from the date that is credited.</p>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="work-list">
+              <span>
+                <img src="https://cafejavas.co.ug/root-assets/images/Component3.png" alt="Component3">
+              </span>
+              <span class="work-text">
+                <h5>Points Transfer</h5>
+                <p>Earned reward points cannot be transferred to any third party.</p>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="work-list">
+              <span>
+                <img src="https://cafejavas.co.ug/root-assets/images/Component4.png" alt="Component4">
+              </span>
+              <span class="work-text">
+                <h5>Redeem Points</h5>
+                <p>On CART before Check out, You can enter the points you want to redeem. </p>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="work-list">
+              <span>
+                <img src="https://cafejavas.co.ug/root-assets/images/Component5.png" alt="Component5">
+              </span>
+              <span class="work-text">
+                <h5>Credits on your Phone Number</h5>
+                <p>Points credited basis the phone number.</p>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+  </div>
+        <a class="popup-close" data-popup-close="reward_popup" href="#"><i class="icon-cross"></i></a>
+    </div>
+    <div class="overlay overlay-click"></div>
+</div>
+    <footer>
+  <div class="container" id="footer">
+    <div class="d-flex flex-column-sb">
+      <div class="col s3">
+        <h4>LOCATIONS</h4>
+        <ul class="list-unstyled footer-link mb-20">
+          <li><strong>Mbarara</strong></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3380099565692695/32.585432878990105/Kira Road/8HQP+55 Mbarara">Kira Road</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3154047/32.59226739999997/Mbarara Boulevard/8H7J+76 Mbarara">Mbarara Boulevard</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3257011/32.57379590000005/Bombo Road/8HGF+7G Mbarara">Bombo Road</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3183367/32.59236069999997/Oasis mall/8H9R+8W Mbarara">Oasis mall</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3367548/32.620900000000006/Nakawa/8JPC+P9 Mbarara">Nakawa</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.3143869999999999/32.56543209999995/Namirembe/8H78+Q5 Mbarara">Namirembe</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.326430/32.605640/Lugogo/8JG4+HP Mbarara">Lugogo</a></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/-22.934540/14.521650/Parliamentary Avenue/8H7P+34 Mbarara">Parliamentary Avenue</a></li>
+        </ul>
+        <ul class="list-unstyled footer-link mb-20">
+          <li><strong>ENTEBBE</strong></li>
+          <li><a href="https://cafejavas.co.ug/user/storemap/0.06638089999999999/32.47626279999997/Victoria Mall/3F8G+HG Entebbe">Victoria Mall</a></li>
+        </ul>
+      </div>
+      <div class="col s3">
+        <h4>CONTACT US</h4>
+        <ul class="list-unstyled footer-link mb-20">
+          <li><a href="#">info@cafejavas.co.ug</a></li>
+          <li><a href="#">+256 313 72 00 00</a></li>
+          <li><a href="#">+256 200 78 00 00</a></li>
+        </ul>
+      </div>
+      <div class="col s3">
+        <h4>OUR MENU</h4>
+        <ul class="list-unstyled footer-link mb-20">
+          <li><a href="https://cafejavas.co.ug/user/productSubCategory/NTU=/QklHIE9OIEJSRUFLRkFTVA==">BREAKFAST</a></li>
+          <li><a href="https://cafejavas.co.ug/user/productSubCategory/NTg=/UGVyZmVjdGVkIERyaW5rcw==">DRINKS</a></li>
+          <li><a href="https://cafejavas.co.ug/user/productSubCategory/NTk=/R0VORVJPVVMgQklHIE1FQUxT">MAINS</a></li>
+          <li><a href="https://cafejavas.co.ug/user/productSubCategory/NTc=/REVDQURFTlQgREVTU0VSVFM=">DESSERTS</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-blue col mb-20">
+      We're commited to great food, great coffee, great service, an experience that will make your time with us fabulous. All visuals are serving suggestions only.<br>
+      Prices are quoted in Uganda Shillings and inclusive of VAT.
+    </p>
+    <ul class="list-unstyled d-flex col footer-menu flex-wrap">
+      <li><a href="https://cafejavas.co.ug/user/privacy">Privacy Policy</a></li>
+      <li><a href="https://cafejavas.co.ug/user/terms">Terms of Use</a></li>
+      <li><a href="https://cafejavas.co.ug/user/contact">Contact Us</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="https://cafejavas.co.ug/user/career">Careers</a></li>
+      <li><a href="https://cafejavas.co.ug/blog/">Blog</a></li>
+      <li><a href="https://cafejavas.co.ug/user/feedback">Feedback</a></li>
+    </ul>
+    <div class="text-blue col">© 2020 Galt Food Mart. All Rights Reserved</div>
+  </div>
+</footer>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
+<script src="https://cafejavas.co.ug/assets/front/layout/js/jquery.min.js"></script>
+<script src="https://cafejavas.co.ug/assets/front/layout/js/slick.min.js"></script>
+
+<script src="https://cafejavas.co.ug/assets/front/layout/js/datepicker.min.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>-->
+<script src="https://cafejavas.co.ug/assets/front/layout/js/jquery.kontrol.js"></script>
+<script src="https://cafejavas.co.ug/assets/front/layout/js/custom.js"></script>
+
+
+
+    <script type="text/javascript">
+    window.onload = function() {
+
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/getCartItem",
+            method: 'GET',
+            contentType: "application/json",
+            data: JSON.stringify({
+                _token: 'Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q'
+            }),
+            success: function(data) {
+
+                $('#cart_items').text(data.success);
+            },
+            error: function(xhr, status, error) {
+
+            }
+        });
+    };
+
+    //Function used to send feedback of a user
+    function sendFeedback(e) {
+        e.preventDefault();
+        var feedbackEmail = $('#feedback_email').val();
+        var feedback = $('#feedback_text').val();
+        $("div.fb-error").remove();
+        if (feedbackEmail == '' || !isEmail(feedbackEmail)) {
+            $('<div class="error-text fb-error">Enter a valid email.</div>').insertAfter('#feedback_email');
+        } else if (feedback == '') {
+            $('<div class="error-text fb-error">Enter your feedback.</div>').insertAfter('#feedback_text');
+        } else {
+            console.log(feedbackEmail);
+            $.ajax({
+                url: "https://cafejavas.co.ug/user/sendFeedback",
+                type: "POST",
+                data: {
+                    "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q",
+                    'email': feedbackEmail,
+                    'feedback': feedback
+                },
+                success: function(result) {
+                    console.log(result);
+                    $("#fb_div").empty();
+                    $.each(result.error, function(key, value) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + value + '</p>');
+                    });
+
+                    if ('fbError' in result) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + result.fbError + '</p>');
+                    }
+                    if ('success' in result) {
+                        location.reload();
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                    console.log(errorThrown);
+                    location.reload();
+                }
+            });
+        }
+    }
+
+    //Function used to check email
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    //Function used to get the details of user
+    var accDetail = [];
+
+    function getAccountDetails() {
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/myAccount",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                console.log(result);
+                $('#u_name').empty();
+                $('#u_email').empty();
+                $('#u_phone').empty();
+                $('#u_img').empty();
+                if ('success' in result) {
+                    accDetail['firstName'] = result.success.firstName;
+                    accDetail['lastName'] = result.success.lastName;
+                    accDetail['email'] = result.success.email;
+                    accDetail['phone'] = result.success.phone;
+                    accDetail['dob'] = result.success.dob;
+                    $('#u_name').append('<p>' + result.success.firstName + ' ' + result.success.lastName + '</p>');
+                    $('#u_email').append('<p>' + result.success.email + '</p>');
+                    $('#u_phone').append('<p>' + '+256 ' + result.success.phone + '</p>');
+                    if (result.success.profilePic != '') {
+                        $('#u_img').append('<img class="img-circle" src="' + result.success.profilePic + '" >');
+                        $('#user_image_show').attr('src', result.success.profilePic);
+                    } else {
+                        $('#u_img').append('<img class="img-circle" src="http://cafejavas.co.ug/restaurant/admin/public/root-assets/images/avatar.png" >');
+                        $('#user_image_show').attr('src', 'http://cafejavas.co.ug/restaurant/admin/public/root-assets/images/avatar.png');
+                    }
+                    $('#f_name').val(result.success.firstName);
+                    $('#l_name').val(result.success.lastName);
+                    $('#usr_email').val(result.success.email);
+                    $('#ph_no').val(result.success.phone);
+                    $('#dob').val(result.success.dob);
+
+                    //                  $('#user_info_popup').show();
+                    $('#user_info_popup, #user_info_popup > .overlay').fadeIn(350);
+                    $('body').addClass('popup-open');
+                } else {
+                    console.log(result);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+    }
+    //Function used to change the password of a user
+    function changePassword(e) {
+        e.preventDefault();
+        var old_pwd = $('#old_pwd').val();
+        var new_pwd = $('#new_pwd').val();
+        var conf_pwd = $('#conf_pwd').val();
+        $("div.error-text").remove();
+        if (old_pwd == '' || old_pwd.length < 8) {
+            $('<div class="error-text">Enter your old password with length atleast 8 characters long.</div>').insertAfter('#old_pwd');
+        } else if (new_pwd == '' || new_pwd.length < 8) {
+            $('<div class="error-text">Enter your new password with length atleast 8 characters long.</div>').insertAfter('#new_pwd');
+        } else if (conf_pwd == '' || conf_pwd.length < 8) {
+            $('<div class="error-text">Enter password again to confirm with length atleast 8 characters long.</div>').insertAfter('#conf_pwd');
+        } else {
+            $.ajax({
+                url: "https://cafejavas.co.ug/user/changePassword",
+                type: "POST",
+                data: {
+                    "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q",
+                    'old_pwd': old_pwd,
+                    'new_pwd': new_pwd,
+                    'conf_pwd': conf_pwd
+                },
+                success: function(result) {
+                    $("#pwd_div").empty();
+                    $.each(result.error, function(key, value) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + value + '</p>');
+                    });
+
+                    if ('pwdError' in result) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + result.pwdError + '</p>');
+                    }
+                    if ('success' in result) {
+                        location.reload();
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                    console.log(errorThrown);
+                }
+            });
+
+        }
+    }
+
+    function editProfile(e) {
+        e.preventDefault();
+        $('#user_info_popup').hide();
+        var firstName = $('#f_name').val();
+        var lastName = $('#l_name').val();
+        var dob = $('#dob').val();
+        if (firstName == '') {
+            $('<div class="error-text epf-error">Enter your first name.</div>').insertAfter('#f_name');
+        } else if (lastName == '') {
+            $('<div class="error-text epf-error">Enter your last name.</div>').insertAfter('#l_name');
+        } else {
+            var form = new FormData();
+            var image = $('#u_image')[0].files[0];
+            form.append('image', image);
+            form.append('f_name', firstName);
+            form.append('l_name', lastName);
+            form.append('dob', dob);
+            form.append('_token', "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q");
+
+            $.ajax({
+                url: "https://cafejavas.co.ug/user/updateProfile",
+                data: form,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: "post",
+                success: function(result) {
+                    console.log(result);
+                    $("#epf_div").empty();
+                    $.each(result.error, function(key, value) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + value + '</p>');
+                    });
+
+                    if ('epfError' in result) {
+                        $('.alert-error').show();
+                        $('.alert-error').append('<p>' + result.epfError + '</p>');
+                    }
+                    if ('success' in result) {
+                        location.reload();
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                    console.log(errorThrown);
+                }
+            });
+        }
+    }
+
+    //Function used to get all the notifications of a user
+    function getNotifications(pageNo) {
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/getNotifications",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q",
+                "pageNo": pageNo
+            },
+            success: function(result) {
+                if ('success' in result) {
+                    if (result.success.length > 0) {
+                        $('#notify_div').empty();
+                        $.each(result.success, function(key, value) {
+                            $('#notify_div').append('<p>' + value.message + '</p>');
+                        });
+                        $('#previous').val(result.previous);
+                        $('#next').val(result.next);
+                        if (result.previous == 0) {
+                            $('#prevBtn').attr('disabled', true);
+                        } else {
+                            $('#prevBtn').removeAttr('disabled');
+                        }
+                        $('#nextBtn').removeAttr('disabled');
+                        $('#notify_popup, #notify_popup > .overlay').fadeIn(350);
+                        $('body').addClass('popup-open');
+                    } else if (result.success.length === 0 && result.previous > 0) {
+                        $('#nextBtn').attr('disabled', true);
+                    } else {
+                        $('#notify_div').empty();
+                        $('#notify_div').append('<p>' + "No notifications yet!" + '</p>');
+                        $('#nextBtn').attr('disabled', true);
+                        $('#prevBtn').attr('disabled', true);
+                        $('#clrBtn').attr('disabled', true);
+                        $('#notify_popup, #notify_popup > .overlay').fadeIn(350);
+                        $('body').addClass('popup-open');
+                    }
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+    }
+    //Function used to get the details of About Us Page
+    function getAboutUs() {
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/aboutUs",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                $('#branch_div').empty();
+                if ('success' in result) {
+                    $('#branch_div').append('<div><h4 class="mt-0 mb-10">OUR BRANCHES</h4></div>');
+                    $('#branch_div').append('<p>' + result.success.description + '</p>');
+                    $('#branch_div').append('<div><h4 class="mt-0 mb-10">MINIMUM DELIVERY FEE</h4></div>');
+                    $('#branch_div').append('<p>' + result.success.deliveryFee + '</p>');
+                    $('#branch_div').append('<div><h4 class="mt-0 mb-10">MINIMUM ORDER</h4></div>');
+                    $('#branch_div').append('<p>' + result.success.minimumOrder + '</p>');
+                    $('#branch_div').append('<div><h4 class="mt-0 mb-10">OPENING HOURS</h4></div>');
+                    $.each(result.success.openingHours, function(key, value) {
+                        $('#branch_div').append('<p>' + value.day + '  ' + value.time + '</p>');
+                    });
+                    // $.each(result.success.branches, function(key, value) {
+                    //     $('#branch_div').append('<div><h4 class="mt-0 mb-10">' + value.name + '</h4></div>');
+                    //     $('#branch_div').append('<p>Address: ' + value.address + '</p>');
+                    //     $('#branch_div').append('<p>Email: ' + value.email + '</p>');
+                    //     $('#branch_div').append('<p>Contact No.: ' + value.contactNumber + '</p>');
+                    // });
+                    $('#about_us_popup, #about_us_popup > .overlay').fadeIn(350);
+                    $('body').addClass('popup-open');
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+    }
+    //Function use to clear all the notifications of a user
+    function clearNotifications() {
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/clearNotifications",
+            type: "POST",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                console.log(result);
+                location.reload();
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+
+    }
+
+    //Function used to get the details of Terms and Conditions Page
+    function getTermsCons() {
+        $.ajax({
+            url: "https://cafejavas.co.ug/user/termsCons",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                console.log(result);
+                $('#terms_div').empty();
+                if ('success' in result) {
+                    $('#terms_div').append('<p>' + result.success[0].description + '</p>');
+                    $('#terms_conditions_popup, #terms_conditions_popup > .overlay').fadeIn(350);
+                    $('body').addClass('popup-open');
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    // Function is used to get the details of Rewards for a user
+    function getRewardDetails() {
+        /*$.ajax({
+            url: "https://cafejavas.co.ug/user/reward",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                console.log(result);
+                $('#remaining_reward').empty();
+                $('#user_level').empty();
+                $('#reward_total').empty();
+
+                if ('success' in result) {
+                    $('#reward_user').attr('data-max', result.success.groupCount);
+                    $('#reward_user').attr('value', result.success.userRewardpoint);
+                    $('#reward_total').append('/ ' + result.success.groupCount);
+                    var remainingReward = result.success.groupCount - result.success.userRewardpoint;
+                    console.log(remainingReward);
+                    $('#remaining_reward').append(remainingReward);
+                    var userAmount = result.success.usertotal;
+                    var silverAmount = result.success.silverAmount;
+                    var goldAmount = result.success.goldAmount;
+                    var platinumAmount = result.success.platinumAmount;
+                    if (userAmount > platinumAmount) {
+                        $('#user_level').append('<h3 class="text-blue mt-0 mb-5">CONGRATULATIONS</h3><div class="text-green f-bold">HURRAY! YOU`RE NOW IN PLATINUM LEVEL</div>');
+                    } else if (userAmount > goldAmount) {
+                        $('#user_level').append('<h3 class="text-blue mt-0 mb-5">CONGRATULATIONS</h3><div class="text-green f-bold">HURRAY! YOU`RE NOW IN GOLD LEVEL</div>');
+                    } else if (userAmount > silverAmount) {
+                        $('#user_level').append('<h3 class="text-blue mt-0 mb-5">CONGRATULATIONS</h3><div class="text-green f-bold">HURRAY! YOU`RE NOW IN SILVER LEVEL</div>');
+                    } else {
+                        var leftAmount = silverAmount - userAmount;
+                        $('#user_level').append('<div class="text-green f-bold">YOU`RE ' + leftAmount + ' AMOUNT AWAY TO REACH SILVER LEVEL!</div>');
+                    }
+                    $(".reward").dial({
+                        fgColor: "#a6b49a",
+                        bgColor: "#222",
+                        thickness: .25
+                    });
+                    $('#reward_popup, #reward_popup > .overlay').fadeIn(350);
+                    $('body').addClass('popup-open');
+                } else {
+                    console.log(result);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });*/
+
+
+
+	$.ajax({
+            url: "https://cafejavas.co.ug/user/getLoyalityPoints",
+            type: "GET",
+            data: {
+                "_token": "Qw8aMGjLFeS9az5oKZLbNlFwRzbq4KaiIEjxHi2Q"
+            },
+            success: function(result) {
+                console.log(result);
+                $('#remaining_reward').empty();
+                $('#user_level').empty();
+                $('#reward_total').empty();
+
+                if (result) {
+                   // console.log("ssssss");
+		        $('#reward_popup, #reward_popup > .overlay').fadeIn(350);
+                    $('body').addClass('popup-open');
+                    //console.log(result);
+                    
+                    var points = result;
+                    $('#user_level').val(points);
+                    $('#count-1').html(points);
+		                // $('#user_level').append('<h3 class="text-blue mt-0 mb-5">Your Reward Points</h3><div class="text-green f-bold">'+points+'</div>');	
+				
+                } else {
+                    console.log(result);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus);
+                alert("Error: " + errorThrown);
+                console.log(errorThrown);
+            }
+        });
+
+
+			
+    }
+
+    function signOut() {
+        var socialType = "";
+        console.log(socialType);
+        if (socialType == '1') {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+            auth2.disconnect();
+            window.location.href = "https://cafejavas.co.ug/user/logout";
+        } else if (socialType == '2') {
+            console.log('In Facebook Logout');
+            window.fbAsyncInit = function() {
+                // FB JavaScript SDK configuration and setup
+                FB.init({
+                    appId: '1218314758346679', // FB App ID
+                    cookie: true, // enable cookies to allow the server to access the session
+                    xfbml: true, // parse social plugins on this page
+                    version: 'v5.0' // use graph api version 2.8
+                });
+
+                // Check whether the user already logged in
+                FB.getLoginStatus(function(response) {
+                    // console.log("response" + response);
+                    // console.log("response.status" + response.status);
+                    // console.log('FB.getAccessToken'+ FB.getAccessToken());
+                    if (response.status === 'connected') {
+                        var accessToken = response.authResponse.accessToken;
+                        if (FB.getAccessToken() != null) {
+                            FB.logout(function() {
+                                // console.log("logout");
+                                window.location.href = "https://cafejavas.co.ug/user/logout";
+                            });
+                        }
+                    }
+                });
+            };
+
+            // Load the JavaScript SDK asynchronously
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            //          FB.getLoginStatus(function (response) {
+            //              if (response.status === 'connected') {
+            //                  var accessToken = response.authResponse.accessToken;
+            //              }
+            //          });
+        } else {
+            window.location.href = "https://cafejavas.co.ug/user/logout";
+        }
+
+    }
+
+    function onLoad() {
+        gapi.load('auth2', function() {
+            gapi.auth2.init();
+        });
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#user_image_show').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+        <script>
+        $(document).ready(function() {
+            $('.fullbanner').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                autoplay: true,
+                cssEase: "ease",
+                mobileFirst: true,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

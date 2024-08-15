@@ -1,0 +1,137 @@
+body {
+    color: #333333; /* Dark gray for text */
+    background-color: #f9f9f9; /* Light gray background */
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1a1a1a; /* Almost black for headers */
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+.table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .table, th, td {
+        display: block;
+        width: 100%;
+    }
+    
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    
+    td:last-child {
+        border-bottom: none;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: left;
+        color: #1a1a1a;
+    }
+}
+
+.parent, .values, .reach, .relevance, .solution, .innovation {
+    background-color: #4a4a4a; /* Dark gray background */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.parent:hover, .values:hover, .reach:hover, .relevance:hover, .solution:hover, .innovation:hover {
+    background-color: #333333;
+}
+
+.area {
+    position: relative;
+    background-color: #e6e1d6; /* Light beige background */
+    color: #333333;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.progress {
+    position: relative;
+    background-color: #f2efe8; /* Very light beige background */
+    color: #333333;
+    width: 50%;
+    height: auto;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.progress:hover {
+    background-color: #e6e1d6;
+}
