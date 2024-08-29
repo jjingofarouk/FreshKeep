@@ -1,141 +1,337 @@
-<img src=“freshkeep.jpg” width=“400” height=“122” alt=“FreshKeep Company Logo”>
-<div class=“video-container”>
-	<p>Watch our FreshKeep activities</p>
-	<video controls>
-		<source src=“FreshKeep.mp4” type=“video.mp4”>
-	</video>
-	<p>
-		In this video, we introduce the FreshKeep team and provide an overview of our project. Learn about our innovative approach to reducing plastic waste and how we are making a difference in our community.
-	</p>
-</div>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshKeep! - Food for All!</title>
+    <title>FreshKeep. Food for All!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --beige-light: #f5f2eb;
+            --beige: #e6e1d6;
+            --beige-dark: #d1c9b7;
+            --gray-light: #f0f0f0;
+            --gray: #a0a0a0;
+            --gray-dark: #4a4a4a;
+            --white: #ffffff;
+            --black: #1a1a1a;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            color: var(--gray-dark);
+            background-color: var(--beige-light);
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #d3d3d3;
-            color: #333;
         }
+
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #4CAF50;
-            font-size: 2em;
-            margin-top: 0;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature {
-            flex: 1 1 calc(33.333% - 20px);
-            background-color: #e7f4e4;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
+            background-color: var(--beige-dark);
+            padding: 20px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .feature h3 {
-            margin-top: 0;
-            color: #4CAF50;
-            font-size: 1.5em;
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        footer {
-            background-color: #333;
-            color: white;
+
+        nav ul li a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--black);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--black);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
         }
-        footer p {
-            margin: 0;
-            font-size: 1em;
+
+        h1 { font-size: 2.75em; }
+        h2 { font-size: 2.25em; }
+        h3 { font-size: 1.9em; }
+        h4 { font-size: 1.6em; }
+        h5 { font-size: 1.3em; }
+        h6 { font-size: 1.1em; }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .table {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: var(--gray-dark);
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--beige);
+        }
+
+        th {
+            background-color: var(--beige);
+            font-weight: 700;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: var(--beige-light);
+        }
+
+        @media (max-width: 768px) {
+            .table, th, td {
+                display: block;
+                width: 100%;
+            }
+            
+            tr {
+                margin-bottom: 20px;
+                border: 1px solid var(--beige);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border-bottom: 1px solid var(--beige-light);
+            }
+            
+            td:last-child {
+                border-bottom: none;
+            }
+            
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 45%;
+                padding-right: 10px;
+                font-weight: bold;
+                text-align: left;
+                color: var(--black);
+            }
+        }
+
+        .parent, .values, .reach, .relevance, .solution, .innovation {
+            background-color: var(--beige-dark);
+            color: var(--gray-dark);
+            padding: 20px 30px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .area {
+            background-color: var(--white);
+            color: var(--gray-dark);
+            padding: 25px 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .progress {
+            background-color: var(--beige);
+            color: var(--gray-dark);
+            padding: 25px 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: var(--beige-dark);
+            color: var(--gray-dark);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        strong {
+            color: var(--black);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>FreshKeep</h1>
-        <p>Food for All! </p>
+        <h1>FreshKeep. Food for All</h1>
+        <nav>
+            <ul>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#values">Our Values</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#progress">Progress</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <h2>About FreshKeep</h2>
-        <p>
-            FreshKeep is an innovative solution designed to tackle the global challenge of food waste and preservation. With a unique blend of modern technology and sustainable practices, FreshKeep ensures that food stays fresh longer, reducing waste and enhancing food security in communities worldwide.
-        </p>
 
-        <h2>Our Features</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>Real-Time Monitoring</h3>
-                <p>
-                    Keep track of humidity and temperature levels in real-time to ensure your produce stays <strong>fresh</strong> for longer.
-                </p>
+    <main>
+        <section id="problem">
+            <h2>The Food Waste Crisis</h2>
+            <div class="area">
+                <h3>Magnitude of the Problem</h3>
+                <p>Food waste in Sub-Saharan Africa is a pressing issue, exacerbated by rapid population growth. Households contribute significantly to this problem, with 96% reporting weekly food waste. Institutions and produce markets also contribute, generating substantial amounts of waste daily.</p>
+                <p><strong>Key findings:</strong></p>
+                <ul>
+                    <li><strong>Household waste:</strong> Ugandan households generate an average of 680 tons of food waste daily.</li>
+                    <li><strong>Institutional waste:</strong> Institutions such as schools and restaurants contribute 80 tons daily.</li>
+                    <li><strong>Produce market waste:</strong> Produce markets generate 8 tons of food waste daily.</li>
+                </ul>
             </div>
-            <div class="feature">
-                <h3>Convertible Design</h3>
-                <p>
-                    Adaptable for both storage and drying purposes, FreshKeep offers <strong>flexibility</strong> to meet varying needs in food preservation.
-                </p>
+            <div class="area">
+                <h3>Who is Affected?</h3>
+                <p>Sub-Saharan Africa faces a stark contrast between hunger and food waste. Despite a large hungry population, significant amounts of food are lost at various stages of the supply chain. Smallholder farmers, urban consumers, and vulnerable groups are disproportionately affected. Addressing this issue requires improvements in agricultural practices, food distribution, consumer education, and policy.</p>
             </div>
-            <div class="feature">
-                <h3>Organic Preservation Formula</h3>
-                <p>
-                    Our organic preservation formula is safe and effective, providing an eco-friendly option for extending the shelf life of perishables.
-                </p>
+        </section>
+
+        <section id="solution">
+            <h2>A Smarter Way to Store Food</h2>
+            <div class="area">
+                <p>FreshKeep is a revolutionary device designed to help people keep their food fresh for longer. It's perfect for homes, farms, or businesses.</p>
+                <ul>
+                    <li><strong>Solar-powered:</strong> No need for electricity.</li>
+                    <li><strong>Portable:</strong> Take it anywhere.</li>
+                    <li><strong>Intelligent:</strong> Uses sensors to maintain the right temperature and humidity.</li>
+                    <li><strong>Biopolymer coating:</strong> Protects fruits and vegetables naturally.</li>
+                </ul>
+                <p>With FreshKeep, you can reduce food waste, save money, and enjoy fresher food.</p>
             </div>
-            <div class="feature">
-                <h3>Solar-Powered Operation</h3>
-                <p>
-                    FreshKeep is powered by solar energy, making it a sustainable and cost-effective solution in off-grid areas.
-                </p>
+            <div class="relevance">
+                <h3>A Win-Win for Farmers and the Planet</h3>
+                <p>FreshKeep helps everyone. Farmers keep more of their food, making more money. People have more food to eat. And we save important things like water and land. It's a win-win for everyone and helps make our world a better place.</p>
             </div>
-            <div class="feature">
-                <h3>Durable Materials</h3>
-                <p>
-                    Built to last, FreshKeep is made from high-quality materials, ensuring long-term use and reliability.
-                </p>
+            <div class="innovation">
+                <h3>Our Innovative Approach</h3>
+                <p>FreshKeep is more than just a storage device. It's a versatile tool designed to reduce food waste and improve livelihoods.</p>
+                <h4>Key Benefits</h4>
+                <ul>
+                    <li><strong>Two-in-One Functionality:</strong> Easily switch between storage and drying modes.</li>
+                    <li><strong>Portability:</strong> Move it around with ease.</li>
+                    <li><strong>Solar Power:</strong> Rely on clean, renewable energy.</li>
+                    <li><strong>Smart Technology:</strong> Monitor and control conditions with ease.</li>
+                    <li><strong>Eco-Friendly:</strong> Reduce your environmental impact.</li>
+                </ul>
+                <h4>How it Works</h4>
+                <ul>
+                    <li><strong>Storage:</strong> Keep your fresh produce at the optimal temperature and humidity.</li>
+                    <li><strong>Drying:</strong> Dehydrate fruits, vegetables, and more using the sun's energy.</li>
+                </ul>
+                <p>Experience the benefits of FreshKeep and make a positive impact on your community and the planet.</p>
             </div>
-            <div class="feature">
-                <h3>Educational Campaigns</h3>
-                <p>
-                    We promote awareness and education on food waste and preservation through community-based campaigns, helping to foster a culture of sustainability.
-                </p>
+        </section>
+
+        <section id="values">
+            <h2>Our Values</h2>
+            <div class="values">
+                <ul>
+                    <li><strong>Innovation:</strong> FreshKeep is committed to pioneering innovative solutions that address global challenges, particularly in the area of food security.</li>
+                    <li><strong>Sustainability:</strong> We prioritize environmentally friendly practices and strive to minimize our carbon footprint.</li>
+                    <li><strong>Social Impact:</strong> FreshKeep aims to contribute to the well-being of communities by improving food access and reducing poverty.</li>
+                    <li><strong>Quality:</strong> We are dedicated to providing high-quality products and services that meet the needs of our customers.</li>
+                    <li><strong>Reliability:</strong> FreshKeep is designed to be a reliable and durable solution for food preservation.</li>
+                    <li><strong>Customer Focus:</strong> We prioritize customer satisfaction and strive to build long-lasting relationships.</li>
+                </ul>
             </div>
-        </div>
-    </section>
-<section> 
-<a href=“teamm.html”>What else do we do?</a>
+        </section>
+
+        <section id="team">
+            <h2>Our Team</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Team Member</th>
+                        <th>Role</th>
+                        <th>Key Responsibilities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Team Member">Ahirirwe Leticia</td>
+                        <td data-label="Role">Agricultural Livelihoods Expert</td>
+                        <td data-label="Key Responsibilities">Guiding the project on sustainable agricultural practices</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Team Member">Andrew Muwanguzi</td>
+                        <td data-label="Role">Software Engineer</td>
+                        <td data-label="Key Responsibilities">Developing and maintaining the real-time monitoring system</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Team Member">Kabagenyi Oliver</td>
+                        <td data-label="Role">Project Lead</td>
+                        <td data-label="Key Responsibilities">Overseeing project implementation and coordination</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Team Member">Murungi Simon</td>
+                        <td data-label="Role">Human Nutrition and Dietetics Expert</td>
+                        <td data-label="Key Responsibilities">Ensuring that preservation techniques meet dietary standards</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Team Member">Okoth Raphaelina</td>
+                        <td data-label="Role">Pharmaceutical Science Specialist</td>
+                        <td data-label="Key Responsibilities">Researching and formulating the organic preservation formula</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="progress">
+            <h2>Our Journey</h2>
+            <div class="progress">
+                <p>FreshKeep was born out of a desire to address the pressing issue of food waste in Uganda. By combining innovative technology with a focus on sustainability, we aim to extend the shelf life of fresh produce and create a positive impact on communities.</p>
+                <h3>Key Milestones</h3>
+                <ul>
+                    <li><strong>Research and Development:</strong> We conducted extensive research to understand the root causes of food waste and develop a tailored solution.</li>
+                    <li><strong>Team Assembly:</strong> We assembled a team of experts to ensure a comprehensive approach.</li>
+                    <li><strong>Strategic Planning:</strong> We defined our goals, target markets, and business model.</li>
+                    <li><strong>Prototype Development:</strong> We're currently working on a functional prototype.</li>
+                </ul>
+                <p>While still in its early stages, FreshKeep has made significant progress. Our next steps involve securing funding and resources to scale our operations and bring FreshKeep to market.</p>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2024 FreshKeep. All Rights Reserved.</p>
+        <p>&copy; 2024 FreshKeep. All rights reserved.</p>
     </footer>
 </body>
 </html>
